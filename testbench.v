@@ -41,7 +41,7 @@ module PWM_Test;
 	
 initial
 begin
-forever #2clk=~clk;
+forever #1clk=~clk;
 end
 	initial begin
 		// Initialize Inputs
