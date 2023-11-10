@@ -37,7 +37,7 @@ module PWM_Test;
     .pwm(pwm)     
 );
 
-
+	
 	
 initial
 begin
@@ -46,8 +46,7 @@ end
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		#10;
-
+      #10;
 				#5000000 $finish;
 	end
 
