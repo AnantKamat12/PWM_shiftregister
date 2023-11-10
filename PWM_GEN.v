@@ -22,28 +22,25 @@
 
 				
 					
-module PWM_Gen(input clk,output [0:9] pwm );				
+module PWM_Gen(input clk,output [0:7] pwm );				
 reg [2:0] i = 0 ;
 reg [7:0] counter = 0;
 
-	integer duty_cycle[0:9];
+integer duty_cycle[0:7];
 
-	reg ShiftBuff[0:7]; 
+reg ShiftBuff[0:7]; 
 
 initial
 begin
 //assigning duty ratios to different waveforms of (output [7:0] pwm);
-	duty_cycle[0] = 15;
-    duty_cycle[1] = 25;
+	duty_cycle[0] = 25;
+    duty_cycle[1] = 40;
 	duty_cycle[2] = 50;
-	duty_cycle[3] = 20;
-	duty_cycle[4]=40;
-   	duty_cycle[5] = 75;
-	duty_cycle[6] = 10;
-	duty_cycle[7] = 80;
-	duty_cycle[8] = 60;
-	duty_cycle[9] = 80;
-	
+	duty_cycle[3] = 65;
+	duty_cycle[4]= 70;
+   	duty_cycle[5] = 80;
+	duty_cycle[6] = 90;
+	duty_cycle[7] = 15;
 end
 
 initial
@@ -97,9 +94,9 @@ end
 
 initial 
 begin
-	$display("Duty Values: %0d, %0d, %0d, %0d, %0d, %0d, %0d, %0d",%0d,%0d,
-		 duty_cycle[9], duty_cycle[0],duty_cycle[1],duty_cycle[2],
-		 duty_cycle[3], duty_cycle[4],duty_cycle[5], duty_cycle[6],ShiftBuff[7],ShiftBuff[8]);
+ $display("Duty Values: %0d, %0d, %0d, %0d, %0d, %0d, %0d, %0d",
+          duty_cycle[7], duty_cycle[0],duty_cycle[1],duty_cycle[2],
+         duty_cycle[3], duty_cycle[4],duty_cycle[5], duty_cycle[6]);
 end
 
 
