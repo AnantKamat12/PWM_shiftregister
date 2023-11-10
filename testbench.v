@@ -39,12 +39,14 @@ module PWM_Test;
 
 
 	
-	
-always
- #1 clk=~clk;
+initial
+begin
+forever #2clk=~clk;
+end
 	initial begin
 		// Initialize Inputs
 		clk = 0;
+		#10;
 
 				#5000000 $finish;
 	end
